@@ -1,13 +1,6 @@
-angular.module('dankDash.controllers')
+var dankDash = angular.module('dankDash')
 
 // creating the controller and inject Angular's $scope
-.controller('loginCtrl', loginCtrl)
+dankDash.controller('loginCtrl', ['$scope', function($scope){
 
-loginCtrl.$inject = ['$scope'];
-
-function loginCtrl($scope) {
-
-    // create a message to display in our view
-    console.log ("GJ");
-    $scope.message = 'Excited to build hybrid app';
-}
+}]);

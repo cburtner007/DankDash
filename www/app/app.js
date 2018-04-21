@@ -1,17 +1,20 @@
-var dankDash = angular.module('dankDash', ['ionic']);
+var dankDash = angular.module('dankDash', ['ionic'])
+
+// creating the controller and inject Angular's $scope
+dankDash.controller('mainController', ['$scope', '$state', function($scope, $state) {
+    $scope.$state = $state;
+    //$state.transitionTo('index');
+  //  console.log ("GJ");
+    console.log("state is:_" + $state.current.name+"-");
+    //$scope.message = 'Excited to build hybrid app';
+}]);
 
 dankDash.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('index', {
-    url: '/',
-    templateUrl: 'screens/login/login.html'
-  })
+    url: '/index',
+    templateUrl: '/app/screens/login/login.html'
+  });
+
+  //$urlRouterProvider.otherwise("/index");
 })
-
-// creating the controller and inject Angular's $scope
-dankDash.controller('mainController', function($scope) {
-
-    // create a message to display in our view
-    console.log ("GJ");
-    $scope.message = 'Excited to build hybrid app';
-});
